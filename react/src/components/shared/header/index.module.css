@@ -40,6 +40,11 @@
   border-radius: 4px;
 }
 
+.nav button.selected {
+  font-weight: 600;
+  border-bottom: 1px solid grey;
+}
+
 .link {
   display: flex;
   justify-self: end;

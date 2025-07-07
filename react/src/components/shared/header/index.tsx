@@ -1,14 +1,20 @@
 import styles from "./index.module.css";
+import classNames from "classnames";
 import emailSrc from '../../../assets/email.svg';
 import githubSrc from '../../../assets/github.svg';
 import linkedinSrc from '../../../assets/linkedin.svg';
-import { useNavigate } from 'react-router-dom';
-import { useCallback } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useCallback, useMemo } from "react";
 
 const myEmail = "estosic@littech.ai";
 
 export default function Header() {
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const pathname = useMemo(() => {
+    return location.pathname;
+  }, [location]);
 
   const handleHomeClick = useCallback(() => {
     navigate("/");
@@ -41,13 +47,28 @@ export default function Header() {
         EVAN STOSIC
       </div>
       <div className={styles.nav}>
-        <button onClick={handleHomeClick}>
+        <button 
+          onClick={handleHomeClick}
+          className={classNames({
+            [styles.selected]: pathname === "/" || pathname.length === 0,
+          })}
+        >
           HOME
         </button>
-        <button onClick={handleResumeClick}>
+        <button 
+          onClick={handleResumeClick}
+          className={classNames({
+            [styles.selected]: pathname.startsWith("/resume"),
+          })}
+        >
           RESUME
         </button>
-        <button onClick={handleBlogClick}>
+        <button 
+          onClick={handleBlogClick}
+          className={classNames({
+            [styles.selected]: pathname.startsWith("/blog"),
+          })}
+        >
           BLOG
         </button>
       </div>
