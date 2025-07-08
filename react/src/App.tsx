@@ -1,13 +1,17 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './app/page'
-import ResumePage from './app/resume/page'
+import FeaturedPage from './app/featured/page'
 import BlogPage from './app/blog/page'
+import ExperiencePage from './app/experience/page'
+import ProjectsPage from './app/projects/page'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/resume" element={<ResumePage />} />
+      <Route path="/featured" element={<FeaturedPage />} />
+      <Route path="/experience" element={<ExperiencePage />} />
+      <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/blog" element={<BlogPage />} />
     </Routes>
   )

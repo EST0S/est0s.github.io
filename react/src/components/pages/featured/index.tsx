@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 
-export default function Resume() {
+export default function Featured() {
 
   return (
     <div className={styles.root}>

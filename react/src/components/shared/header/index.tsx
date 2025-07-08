@@ -3,6 +3,7 @@ import classNames from "classnames";
 import emailSrc from '../../../assets/email.svg';
 import githubSrc from '../../../assets/github.svg';
 import linkedinSrc from '../../../assets/linkedin.svg';
+import profileSrc from '../../../assets/profile.jpeg';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useCallback, useMemo } from "react";
 
@@ -20,8 +21,16 @@ export default function Header() {
     navigate("/");
   }, [navigate]);
 
-  const handleResumeClick = useCallback(() => {
-    navigate("/resume");
+  const handleFeaturedClick = useCallback(() => {
+    navigate("/featured");
+  }, [navigate]);
+
+  const handleExperienceClick = useCallback(() => {
+    navigate("/experience");
+  }, [navigate]);
+
+  const handleProjectsClick = useCallback(() => {
+    navigate("/projects");
   }, [navigate]);
 
   const handleBlogClick = useCallback(() => {
@@ -43,8 +52,9 @@ export default function Header() {
 
   return (
     <div className={styles.root}>
-      <div className={styles.siteName}>
-        EVAN STOSIC
+      <div className={styles.siteHeader}>
+        <img src={profileSrc} className={styles.icon} />
+        <span>EVAN STOSIC</span>
       </div>
       <div className={styles.nav}>
         <button 
@@ -56,12 +66,28 @@ export default function Header() {
           HOME
         </button>
         <button 
-          onClick={handleResumeClick}
+          onClick={handleFeaturedClick}
           className={classNames({
-            [styles.selected]: pathname.startsWith("/resume"),
+            [styles.selected]: pathname.startsWith("/featured"),
           })}
         >
-          RESUME
+          FEATURED
+        </button>
+        <button 
+          onClick={handleExperienceClick}
+          className={classNames({
+            [styles.selected]: pathname.startsWith("/experience"),
+          })}
+        >
+          EXPERIENCE
+        </button>
+        <button 
+          onClick={handleProjectsClick}
+          className={classNames({
+            [styles.selected]: pathname.startsWith("/projects"),
+          })}
+        >
+          PROJECTS
         </button>
         <button 
           onClick={handleBlogClick}

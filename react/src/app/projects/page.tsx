@@ -1,11 +1,11 @@
 import React from "react";
 import DefaultLayout from "../../components/shared/layouts/default";
-import Resume from "../../components/pages/resume";
+import Projects from "../../components/pages/projects";
 
-export default function ResumePage(): React.ReactElement {
+export default function ProjectsPage(): React.ReactElement {
   return (
     <DefaultLayout>
-      <Resume />
+      <Projects />
     </DefaultLayout>
   );
 }

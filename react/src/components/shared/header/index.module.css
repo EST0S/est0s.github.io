@@ -5,17 +5,31 @@
   width: 100%;
   box-sizing: border-box;
   position: relative;
-  height: 70px;
+  height: 80px;
   background-color: black;
   border-bottom: 1px solid grey;
 }
 
-.siteName {
+.siteHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
   font-family: 'Sora', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
   font-weight: bold;
   justify-self: start;
   padding-left: 10px;
+  gap: 10px;
+}
+
+.siteHeader .icon {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 40px;
+  border: 1px solid grey;
 }
 
 .nav {
@@ -33,6 +47,7 @@
   cursor: pointer;
   padding: 0.5rem 0.75rem;
   transition: background 0.3s ease;
+  border-radius: 4px;
 }
 
 .nav button:hover {
@@ -43,6 +58,11 @@
 .nav button.selected {
   font-weight: 600;
   border-bottom: 1px solid grey;
+  border-radius: 0px;
+}
+
+.nav button.selected:hover {
+  border-radius: 4px;
 }
 
 .link {
