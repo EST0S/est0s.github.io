@@ -5,9 +5,42 @@
   height: 100%;
 }
 
-.home {
+.section {
   display: flex;
   width: 50%;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 15% 10% 0 10%;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.profession {
+  display: flex;
+  color: #FFC107;
+  margin-bottom: 0;
+}
+
+.name {
+  display: flex;
+  font-size: 54px;
+  margin-top: 4px;
+}
+
+a {
+  color: #66ccff; /* light blue */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  color: #99e0ff; /* even lighter blue on hover */
+  text-decoration: underline;
 }
 
 .collage {
