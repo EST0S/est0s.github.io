@@ -1,9 +1,9 @@
 import styles from "./index.module.css";
 import classNames from "classnames";
-import emailSrc from '../../../assets/email.svg';
-import githubSrc from '../../../assets/github.svg';
-import linkedinSrc from '../../../assets/linkedin.svg';
-import profileSrc from '../../../assets/profile.jpeg';
+import emailSrc from '../../../assets/icons/email.svg';
+import githubSrc from '../../../assets/icons/github.svg';
+import linkedinSrc from '../../../assets/icons/linkedin.svg';
+import profileSrc from '../../../assets/images/profile.jpeg';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useCallback, useMemo } from "react";
 
